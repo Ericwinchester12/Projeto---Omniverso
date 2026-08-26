@@ -1,0 +1,143 @@
+/* =========================================
+   RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   FUNDO ESPACIAL MINIMALISTA
+   ========================================= */
+body {
+    background-color: #030305;
+    /* Agora o CSS busca a imagem na pasta correta do projeto */
+    background-image: url('../img/Omniverso.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Regras importantes que haviam sumido */
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.titulo-omniverso {
+    font-size: 32px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   OS PORTAIS
+   ========================================= */
+.container-portais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: 120px;
+    flex-wrap: wrap;
+}
+
+.portal {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.4s ease;
+    
+    /* Cria a textura de um planeta escuro/esfera 3D sem precisar de foto */
+    background: radial-gradient(circle at 30% 30%, #1a1a24 0%, #000000 80%);
+    box-shadow: inset -20px -20px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.portal:hover {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   AURAS E DESFOQUE (O brilho atrás do planeta)
+   ========================================= */
+.aura-desfoque {
+    position: absolute;
+    /* A aura é um pouco maior que o portal para "vazar" pelas bordas */
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(35px);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+/* Brilho vermelho escuro para o RDR2 */
+.aura-vermelha {
+    background: linear-gradient(45deg, #5c0000, #ff3300);
+}
+
+/* Brilho azul/roxo para o GTA */
+.aura-neon {
+    background: linear-gradient(45deg, #000046, #00e5ff);
+}
+
+/* Quando passar o mouse, a aura acende mais forte */
+.portal:hover .aura-desfoque {
+    opacity: 0.9;
+    filter: blur(45px);
+}
+
+/* =========================================
+   TEXTOS DOS JOGOS
+   ========================================= */
+.nome-dimensao {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 10;
+    
+    /* Removemos a caixa preta feia e colocamos uma sombra no texto para leitura */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+    background: transparent;
+}
+/* Textura do Planeta RDR2 */
+.portal-rdr2 {
+    background-image: url('../img/rdr1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Textura do Planeta GTA */
+.portal-gta {
+    background-image: url('../img/gtav.jpg');
+    background-size: cover;
+    background-position: center;
+}
