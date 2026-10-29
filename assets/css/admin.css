@@ -1,0 +1,290 @@
+/* =========================================
+   ADMIN - ESTILOS DO PAINEL
+   ========================================= */
+
+/* =========================================
+   TELA DE LOGIN
+   ========================================= */
+.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+}
+
+.form-login {
+    margin-top: 40px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.campo input::placeholder {
+    color: #444;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.campo select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23555'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.campo select option {
+    background: #111;
+    color: white;
+}
+
+.login-erro {
+    color: #ff4444;
+    font-size: 13px;
+    min-height: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-submit:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   PAINEL
+   ========================================= */
+.admin-painel header {
+    position: relative;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    z-index: 100;
+}
+
+.btn-voltar:hover {
+    color: white;
+}
+
+.btn-logout {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #666;
+    padding: 8px 18px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    color: #ff4444;
+    border-color: rgba(255, 60, 60, 0.3);
+}
+
+/* =========================================
+   SEÇÃO DE UPLOAD
+   ========================================= */
+.upload-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.section-titulo {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.upload-campos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.upload-campos .campo {
+    flex: 1;
+}
+
+/* Área de Drop */
+.upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.upload-placeholder {
+    color: #444;
+}
+
+.upload-icone {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.upload-placeholder p {
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.upload-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+/* Barra de Progresso */
+.upload-progresso {
+    margin-bottom: 15px;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.barra-preenchimento {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00e5ff, #7c4dff);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.progresso-texto {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+.upload-status {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+    min-height: 20px;
+    margin-bottom: 15px;
+}
+
+.upload-status.sucesso {
+    color: #00e676;
+}
+
+.upload-status.erro {
+    color: #ff4444;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 600px) {
+    .upload-campos {
+        flex-direction: column;
+    }
+
+    .upload-area {
+        padding: 25px;
+    }
+
+    .btn-voltar {
+        position: static;
+        display: block;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .btn-logout {
+        position: static;
+        display: block;
+        margin: 10px auto 0;
+    }
+}

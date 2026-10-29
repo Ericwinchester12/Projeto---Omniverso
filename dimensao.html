@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Omniverso | Dimensão</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dimensao.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="btn-voltar" title="Voltar ao Omniverso">&#8592; OMNIVERSO</a>
+        <h1 class="titulo-omniverso" id="titulo-jogo">CARREGANDO...</h1>
+        <p class="subtitulo" id="subtitulo-jogo">Acessando os arquivos desta dimensão</p>
+    </header>
+
+    <main class="galeria-container" id="galeria-container">
+        <!-- Imagens serão carregadas via JavaScript -->
+        <div class="galeria-vazia" id="galeria-vazia" style="display:none;">
+            <p>Nenhum registro encontrado nesta dimensão.</p>
+            <p class="subtitulo">Os arquivos ainda não foram catalogados.</p>
+        </div>
+    </main>
+
+    <!-- =========================================
+         LIGHTBOX
+         ========================================= -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-fechar" id="lightbox-fechar">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</button>
+        <div class="lightbox-conteudo">
+            <img src="" alt="" id="lightbox-img">
+            <p class="lightbox-titulo" id="lightbox-titulo"></p>
+        </div>
+    </div>
+
+    <script src="assets/js/dimensao.js"></script>
+</body>
+</html>

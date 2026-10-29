@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Omniverso | Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+    <!-- =========================================
+         TELA DE LOGIN
+         ========================================= -->
+    <div class="admin-login" id="tela-login">
+        <div class="login-container">
+            <h1 class="titulo-omniverso">ACESSO RESTRITO</h1>
+            <p class="subtitulo">Identifique-se para acessar o painel</p>
+
+            <form id="form-login" class="form-login">
+                <div class="campo">
+                    <input type="text" id="login-user" placeholder="Usuário" autocomplete="username" required>
+                </div>
+                <div class="campo">
+                    <input type="password" id="login-pass" placeholder="Senha" autocomplete="current-password" required>
+                </div>
+                <p class="login-erro" id="login-erro"></p>
+                <button type="submit" class="btn-submit">ENTRAR</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================
+         PAINEL ADMIN
+         ========================================= -->
+    <div class="admin-painel" id="tela-painel" style="display:none;">
+
+        <header>
+            <a href="index.html" class="btn-voltar">&#8592; OMNIVERSO</a>
+            <h1 class="titulo-omniverso">PAINEL DE CONTROLE</h1>
+            <p class="subtitulo">Gerencie os registros do multiverso</p>
+            <button class="btn-logout" id="btn-logout">SAIR</button>
+        </header>
+
+        <!-- Upload -->
+        <section class="upload-section">
+            <h2 class="section-titulo">ENVIAR NOVO REGISTRO</h2>
+
+            <form id="form-upload" class="form-upload" enctype="multipart/form-data">
+                <div class="upload-campos">
+                    <div class="campo">
+                        <label for="upload-jogo">Dimensão</label>
+                        <select id="upload-jogo" required>
+                            <option value="">Selecione o jogo...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="upload-titulo">Título (opcional)</label>
+                        <input type="text" id="upload-titulo" placeholder="Ex: Pôr do sol em Valentine">
+                    </div>
+                </div>
+
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="upload-arquivo" accept="image/jpeg,image/png,image/webp,image/gif" required hidden>
+                    <div class="upload-placeholder" id="upload-placeholder">
+                        <span class="upload-icone">&#128247;</span>
+                        <p>Clique ou arraste uma imagem aqui</p>
+                        <p class="subtitulo">JPG, PNG, WEBP ou GIF — até 20MB</p>
+                    </div>
+                    <img class="upload-preview" id="upload-preview" style="display:none;" alt="Preview">
+                </div>
+
+                <div class="upload-progresso" id="upload-progresso" style="display:none;">
+                    <div class="barra-progresso">
+                        <div class="barra-preenchimento" id="barra-preenchimento"></div>
+                    </div>
+                    <p class="progresso-texto" id="progresso-texto">0%</p>
+                </div>
+
+                <p class="upload-status" id="upload-status"></p>
+                <button type="submit" class="btn-submit" id="btn-upload">ENVIAR REGISTRO</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
