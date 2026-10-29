@@ -11,8 +11,21 @@
 
     <header>
         <a href="index.html" class="btn-voltar" title="Voltar ao Omniverso">&#8592; OMNIVERSO</a>
+        
+        <div class="header-acoes-admin">
+            <a href="admin.html" id="btn-add-print" class="btn-admin-topo" style="display:none;" title="Enviar print para este jogo">+ ENVIAR PRINT</a>
+            <a href="admin.html" class="btn-admin-topo" title="Painel de Controle">&#9881; PAINEL</a>
+        </div>
+
         <h1 class="titulo-omniverso" id="titulo-jogo">CARREGANDO...</h1>
         <p class="subtitulo" id="subtitulo-jogo">Acessando os arquivos desta dimensão</p>
+
+        <!-- Alternador rápido de Dimensão -->
+        <nav class="nav-dimensoes">
+            <a href="dimensao.html?jogo=rdr1" class="tab-dimensao" id="tab-rdr1">RDR 1</a>
+            <span class="separador-dimensao">|</span>
+            <a href="dimensao.html?jogo=gtav" class="tab-dimensao" id="tab-gtav">GTA V</a>
+        </nav>
     </header>
 
     <main class="galeria-container" id="galeria-container">

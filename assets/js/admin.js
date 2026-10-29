@@ -102,6 +102,9 @@
     }
 
     function carregarJogos() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jogoParam = urlParams.get('jogo');
+
         fetch('api/jogos.php')
             .then(r => r.json())
             .then(data => {
@@ -114,6 +117,9 @@
                     const option = document.createElement('option');
                     option.value = jogo.slug;
                     option.textContent = jogo.nome;
+                    if (jogoParam && jogo.slug === jogoParam) {
+                        option.selected = true;
+                    }
                     uploadJogo.appendChild(option);
                 });
             })
@@ -204,7 +210,8 @@
             try {
                 const data = JSON.parse(xhr.responseText);
                 if (data.success) {
-                    setStatus('Registro enviado com sucesso!', 'sucesso');
+                    const verGaleriaLink = '<a href="dimensao.html?jogo=' + encodeURIComponent(jogo) + '" class="link-ver-galeria">Ver na galeria &#8594;</a>';
+                    setStatus('Registro enviado com sucesso! ' + verGaleriaLink, 'sucesso');
                     resetUploadForm();
                 } else {
                     setStatus(data.error || 'Erro ao enviar', 'erro');
@@ -242,8 +249,8 @@
         barraPreenchimento.style.width = '0%';
     }
 
-    function setStatus(msg, tipo) {
-        uploadStatus.textContent = msg;
+    function setStatus(msgHtml, tipo) {
+        uploadStatus.innerHTML = msgHtml;
         uploadStatus.className = 'upload-status' + (tipo ? ' ' + tipo : '');
     }
 

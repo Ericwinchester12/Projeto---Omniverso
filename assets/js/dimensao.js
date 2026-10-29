@@ -26,6 +26,13 @@
     let lightboxIndex = 0;
     let isAdmin = false;
 
+    // Elementos adicionais
+    const btnAddPrint = document.getElementById('btn-add-print');
+    const tabAtiva = document.getElementById('tab-' + jogoSlug);
+    if (tabAtiva) {
+        tabAtiva.classList.add('ativo');
+    }
+
     // =========================================
     // INICIALIZAÇÃO
     // =========================================
@@ -35,25 +42,31 @@
         return;
     }
 
-    // Verifica se está logado como admin
-    checkAdmin();
+    // Inicialização sequencial (evita race condition no isAdmin)
+    iniciar();
 
-    // Carrega as imagens
-    carregarImagens();
+    async function iniciar() {
+        await checkAdmin();
+        await carregarImagens();
+    }
 
     // =========================================
     // FUNÇÕES
     // =========================================
 
-    function checkAdmin() {
-        fetch('api/check_session.php')
-            .then(r => r.json())
-            .then(data => {
-                isAdmin = data.loggedIn === true;
-            })
-            .catch(() => {
-                isAdmin = false;
-            });
+    async function checkAdmin() {
+        try {
+            const r = await fetch('api/check_session.php');
+            const data = await r.json();
+            isAdmin = data.loggedIn === true;
+
+            if (isAdmin && btnAddPrint) {
+                btnAddPrint.style.display = 'inline-block';
+                btnAddPrint.href = 'admin.html?jogo=' + encodeURIComponent(jogoSlug);
+            }
+        } catch {
+            isAdmin = false;
+        }
     }
 
     function carregarImagens() {

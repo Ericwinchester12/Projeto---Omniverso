@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /Projeto---Omniverso/
+
+    # Ignora arquivos e pastas existentes
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Rota amigável para o painel admin
+    RewriteRule ^admin/?$ admin.html [L,QSA]
+
+    # Rotas amigáveis para as dimensões dos jogos
+    # Exemplo: /dimensao/rdr1 ou /rdr1
+    RewriteRule ^dimensao/([a-zA-Z0-9_-]+)/?$ dimensao.html?jogo=$1 [L,QSA]
+    RewriteRule ^(rdr1|gtav)/?$ dimensao.html?jogo=$1 [L,QSA]
+</IfModule>

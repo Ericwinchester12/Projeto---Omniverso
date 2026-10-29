@@ -1,0 +1,12 @@
+# Ignorar todos os arquivos de upload de imagens
+uploads/*
+!uploads/.gitkeep
+
+# Arquivos do sistema operacional e IDE
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.idea/
+.vscode/

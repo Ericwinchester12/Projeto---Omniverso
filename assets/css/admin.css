@@ -147,6 +147,57 @@
     border-color: rgba(255, 60, 60, 0.3);
 }
 
+/* Atalhos de Dimensões no Header */
+.nav-atalhos-dimensoes {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.label-atalho {
+    color: #444;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-atalho-dimensao {
+    color: #777;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-atalho-dimensao:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.separador-atalho {
+    color: #333;
+    font-size: 11px;
+}
+
+.link-ver-galeria {
+    display: inline-block;
+    margin-left: 10px;
+    color: #00e5ff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: text-shadow 0.3s ease;
+}
+
+.link-ver-galeria:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
 /* =========================================
    SEÇÃO DE UPLOAD
    ========================================= */
