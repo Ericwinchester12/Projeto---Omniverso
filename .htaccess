@@ -1,6 +1,5 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /Projeto---Omniverso/
 
     # Ignora arquivos e pastas existentes
     RewriteCond %{REQUEST_FILENAME} -f [OR]

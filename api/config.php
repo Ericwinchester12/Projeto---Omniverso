@@ -3,10 +3,10 @@
 // CONFIGURAÇÃO DO BANCO DE DADOS
 // =========================================
 
-$DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASS = '';           // Senha padrão do XAMPP é vazia
-$DB_NAME = 'omniverso';
+$DB_HOST = getenv('DB_HOST') ?: 'localhost';
+$DB_USER = getenv('DB_USER') ?: 'root';
+$DB_PASS = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';           // Senha padrão do XAMPP é vazia
+$DB_NAME = getenv('DB_NAME') ?: 'omniverso';
 
 // Conexão inicial (sem selecionar banco, para poder criá-lo)
 $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS);
